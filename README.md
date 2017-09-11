@@ -1,4 +1,13 @@
-# Cloud Foundry Node.js Buildpack
+# Cloud Foundry Node.js Buildpack with OpenJDK 7
+
+This buildpack is a fork of the [Cloud Foundry Node.js Buildpack](https://github.com/cloudfoundry/nodejs-buildpack), but adds the [OpenJDK 7 JDK](http://openjdk.java.net/) (includes the JRE) ubuntu package during the supply phase.
+This is particularly useful for project using the [java module for nodejs](https://github.com/joeferner/node-java) (and all modules which depend on node-java).
+
+### Disclaimer
+
+This is not an official Cloud Foundry buildpack. It is provided "as is", without warranty of any kind.
+
+### Cloud Foundry
 
 [![CF Slack](https://www.google.com/s2/favicons?domain=www.slack.com) Join us on Slack](https://cloudfoundry.slack.com/messages/buildpacks/)
 

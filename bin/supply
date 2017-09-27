@@ -17,7 +17,11 @@ APT_OPTIONS="-o debug::nolocking=true -o Dir::Cache=$APT_CACHE_DIR -o Dir::State
 
 echo "Updating apt caches"
 apt-get $APT_OPTIONS update
-apt-get $APT_OPTIONS -y -d install openjdk-7-jdk
+
+if [ $(ls -1 $APT_CACHE_DIR/archives/openjdk-7-jdk*.deb | wc -l) -lt 1 ]
+then
+  apt-get $APT_OPTIONS -y -d install openjdk-7-jdk
+fi
 JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/
 
 mkdir -p $BUILD_DIR/.apt
